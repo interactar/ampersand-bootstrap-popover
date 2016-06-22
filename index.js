@@ -2,7 +2,6 @@ var View = require('ampersand-view');
 window.jQuery = require('jquery');
 require('bootstrap');
 require('bootstrap-tooltip');
-
 var extend = require('lodash/assign');
 
 module.exports = View.extend({
