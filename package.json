@@ -1,0 +1,25 @@
+{
+  "name": "popover",
+  "version": "0.0.0",
+  "description": "bootstrap popover component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interactar/ampersand-bootstrap-popover.git"
+  },
+  "keywords": [
+    "ampersand",
+    "bootstrap",
+    "popover",
+    "component"
+  ],
+  "author": "Facugon <facugon@interactar.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interactar/ampersand-bootstrap-popover/issues"
+  },
+  "homepage": "https://github.com/interactar/ampersand-bootstrap-popover#readme"
+}
