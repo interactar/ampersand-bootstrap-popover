@@ -1,5 +1,5 @@
 {
-  "name": "ampersand-popover",
+  "name": "ampersand-component-popover",
   "version": "0.0.0",
   "description": "bootstrap popover component",
   "main": "index.js",
