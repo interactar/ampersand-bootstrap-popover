@@ -5,16 +5,16 @@ require('bootstrap-tooltip');
 var extend = require('lodash/assign');
 
 module.exports = View.extend({
+  autoRender:true,
   props:{
     target:['any',true],
     view:['state',true],
-    title:'string',
-    trigger:['string',false,'click'],
-    placement:['string',false,'right'],
-    html:['string',false,'html'],
     events:['object',false,function (){
       return {};
-    }]
+    }],
+    _title:'string',
+    _trigger:['string',false,'click'],
+    _placement:['string',false,'right']
   },
   template:require('./template.hbs'),
   render:function(){
@@ -24,16 +24,16 @@ module.exports = View.extend({
 
     var $popover = this.$popover = $(this.target);
     this.$popover.popover({
-      title: this.title,
+      title: this._title,
       content: content.el,
       html: true,
-      placement: this.placement,
-      trigger: this.trigger
+      placement: this._placement,
+      trigger: this._trigger
     });
 
     var self = this;
-    for(var eventName in this.events){
-      var eventHandler = this.events[eventName];
+    for(var eventName in this._events){
+      var eventHandler = this._events[eventName];
       $popover.on(eventName,function(){
         eventHandler.prototype.apply(self,arguments);
       });
