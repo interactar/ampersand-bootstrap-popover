@@ -6,8 +6,8 @@ var extend = require('lodash/assign');
 
 module.exports = View.extend({
   props:{
-    target:['object',true],
-    content:['string',true],
+    target:['any',true],
+    view:['state',true],
     title:'string',
     trigger:['string',false,'click'],
     placement:['string',false,'right'],
@@ -20,18 +20,16 @@ module.exports = View.extend({
   render:function(){
     this.renderWithTemplate(this);
 
-    var content = this.content.render();
-
-    var options = _.extend({
-      title:'Title',
-      content:content,
-      html:true,
-      placement:'right',
-      trigger:'click'
-    },this._values);
+    var content = this.view.render();
 
     var $popover = this.$popover = $(this.target);
-    this.$popover.popover(options);
+    this.$popover.popover({
+      title: this.title,
+      content: content.el,
+      html: true,
+      placement: this.placement,
+      trigger: this.trigger
+    });
 
     var self = this;
     for(var eventName in this.events){
